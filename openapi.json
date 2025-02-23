@@ -1,0 +1,107 @@
+{
+  "info": {
+    "title": "oRPC API Demo",
+    "version": "0.0.1"
+  },
+  "openapi": "3.1.1",
+  "paths": {
+    "/get_user": {
+      "post": {
+        "operationId": "getUser",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jsonrpc": {
+                    "const": "2.0"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "uid": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "uid"
+                    ]
+                  }
+                },
+                "required": [
+                  "jsonrpc",
+                  "method",
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "const": "2.0"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "username": {
+                          "type": "string"
+                        },
+                        "avatar": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "username",
+                        "avatar"
+                      ]
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "number"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "data": {}
+                      },
+                      "required": [
+                        "code",
+                        "message",
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "jsonrpc",
+                    "id"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

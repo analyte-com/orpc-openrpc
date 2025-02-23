@@ -1,0 +1,21 @@
+{
+  "name": "orcp-demo",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@orpc/client": "^0.41.0",
+    "@orpc/contract": "^0.41.0",
+    "@orpc/openapi": "^0.41.0",
+    "@orpc/server": "^0.41.0",
+    "@orpc/zod": "^0.41.0",
+    "nanoid": "^5.1.0",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.2"
+  }
+}
